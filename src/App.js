@@ -5,8 +5,7 @@ import Product from './pages/Product/Product';
 import Products from './pages/Products/Products';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
-
-//comment
+import "./app.scss"
 
 function Layout() {
   return (
