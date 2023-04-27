@@ -31,10 +31,10 @@ function Product() {
             </div>
           </div>
           <div className="right">
-            <h1>Title</h1>
-            <span className='price'>$199</span>
+            <h1>{data?.attributes?.title}</h1>
+            <span className='price'>${data?.attributes?.price}</span>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti deserunt laboriosam nulla beatae ullam commodi minima earum, molestiae in, voluptatum quam at quo aliquam aspernatur veniam pariatur iste ratione repellendus!
+            {data?.attributes?.desc}
             </p>
             <div className="quantity">
               <button onClick={() => setQuantity((prev) => (prev <= 1 ? 1 : prev - 1))}>-</button>
