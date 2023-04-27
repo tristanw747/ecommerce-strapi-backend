@@ -47,12 +47,13 @@ function FeaturedProducts({ type }) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await axios.get(process.env.REACT_APP_API_URL+"/products?populate=*" ,{
+        const res = await axios.get(process.env.REACT_APP_API_URL + `/products?populate=*&[filters][type][$eq]=${type}`, {
           headers: {
             Authorization: "bearer" + process.env.REACT_APP_API_TOKEN
           }
         })
-      setData(res.data.data)
+        setData(res.data.data)
+        console.log(res.data.data[0].attributes.img2.data.attributes.url)
       }
       catch (err) {
         console.log(err)
