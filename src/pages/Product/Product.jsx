@@ -9,13 +9,13 @@ function Product() {
   const [selectedImg, setSelectedImg] = useState(0)
   const [quantity, setQuantity] = useState(1)
 
-  const { data } = useFetch('https://postgresql-strapi.onrender.com/api/products?populate=*')
+  // const { data } = useFetch('https://postgresql-strapi.onrender.com/api/products?populate=*')
 
-  const images = data?.map(e => e.attributes.image.data.attributes.url)
-  // const images = [
-  //   "https://images.pexels.com/photos/1192609/pexels-photo-1192609.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  //   "https://images.pexels.com/photos/1159670/pexels-photo-1159670.jpeg?auto=compress&cs=tinysrgb&w=1600"
-  // ]
+  // const images = data?.map(e => e.attributes.image.data.attributes.url)
+  const images = [
+    "https://images.pexels.com/photos/1192609/pexels-photo-1192609.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "https://images.pexels.com/photos/1159670/pexels-photo-1159670.jpeg?auto=compress&cs=tinysrgb&w=1600"
+  ]
 
   return (
     <div className='product'>

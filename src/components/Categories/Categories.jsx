@@ -15,7 +15,7 @@ function Categories() {
         <div className="row">
           <img src="https://images.pexels.com/photos/2036646/pexels-photo-2036646.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
           <button>
-            <Link className='link' to="/products/1">Women</Link>
+            <Link className='link' to="/products/2">Men</Link>
           </button>
         </div>
       </div>
@@ -33,7 +33,7 @@ function Categories() {
             <div className="row">
               <img src="https://images.pexels.com/photos/1192609/pexels-photo-1192609.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
               <button>
-                <Link className='link' to="/products/1">Men</Link>
+                <Link className='link' to="/products/1">Women</Link>
               </button>
             </div>
           </div>

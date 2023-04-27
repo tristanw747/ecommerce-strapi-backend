@@ -24,10 +24,10 @@ const [open,setOpen]= useState(false)
             <KeyboardArrowDownIcon /></div>
 
           <div className="item">
-            <Link to="/products/1">Men</Link>
+            <Link to="/products/1">Women</Link>
           </div>
           <div className="item">
-            <Link to="/products/2">Women</Link>
+            <Link to="/products/2">Men</Link>
           </div>
           <div className="item">
             <Link to="/products/3">Children</Link>
