@@ -4,26 +4,28 @@ import { useState } from 'react'
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import BalanceIcon from "@mui/icons-material/Balance";
-
+import useFetch from '../../hooks/useFetch';
 function Product() {
   const [selectedImg, setSelectedImg] = useState(0)
   const [quantity, setQuantity] = useState(1)
 
+  const { data } = useFetch('https://postgresql-strapi.onrender.com/api/products?populate=*')
 
-  const images = [
-    "https://images.pexels.com/photos/1192609/pexels-photo-1192609.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    "https://images.pexels.com/photos/1159670/pexels-photo-1159670.jpeg?auto=compress&cs=tinysrgb&w=1600"
-  ]
+  const images = data?.map(e => e.attributes.image.data.attributes.url)
+  // const images = [
+  //   "https://images.pexels.com/photos/1192609/pexels-photo-1192609.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  //   "https://images.pexels.com/photos/1159670/pexels-photo-1159670.jpeg?auto=compress&cs=tinysrgb&w=1600"
+  // ]
 
   return (
     <div className='product'>
       <div className="left">
         <div className="images">
-          <img src={images[0]} alt="" onClick={(e) => setSelectedImg(0)} />
-          <img src={images[1]} alt="" onClick={(e) => setSelectedImg(1)} />
+          {images && <img src={images[0]} alt="" onClick={(e) => setSelectedImg(0)} />}
+          {images && <img src={images[1]} alt="" onClick={(e) => setSelectedImg(1)} />}
         </div>
         <div className="mainImg">
-          <img src={images[selectedImg]} alt="" />
+          {images && <img src={images[selectedImg]} alt="" />}
         </div>
       </div>
       <div className="right">

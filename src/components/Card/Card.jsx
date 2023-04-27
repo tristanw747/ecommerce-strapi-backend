@@ -2,24 +2,22 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import "./Card.scss"
 
-
 function Card({ item }) {
   return (
     <Link className='link' to={`/product/${item.id}`}>
       <div className='card'>
         <div className="image">
-          {item.isNew && <span>New Season</span>}
+          {item?.attributes.isNew && <span>New Season</span>}
           <img src={item.img} alt="" className="mainImg" />
           <img src={item.img2} alt="" className="secondImg" />
         </div>
-        <h2>{item.title}</h2>
+        <h2>{item?.attributes.title}</h2>
         <div className="prices">
-          <h3>${item.oldPrice}</h3>
-          <h3>${item.price}</h3>
+          <h3>${item.oldPrice || Math.floor(item?.attributes.price *1.2)}</h3>
+          <h3>${item?.attributes.price}</h3>
         </div>
       </div>
     </Link>
-
   )
 }
 
