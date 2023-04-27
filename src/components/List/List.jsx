@@ -43,8 +43,9 @@ function List() {
 
 
   return (
-    <div className='list'>{data?.map(item => (
-      <Card item={item} key={item.id} />))}
+    <div className='list'>
+      {/* {data?.map(item => (
+      <Card item={item} key={item.id} />))} */}
     </div>
   )
 }
