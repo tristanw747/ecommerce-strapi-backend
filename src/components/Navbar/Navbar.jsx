@@ -49,7 +49,7 @@ function cartCount() {
 
 
         <div className="center">
-          <Link to="/">AMBERGLACE</Link>
+          <Link to="/">EASTHEALTH</Link>
         </div>
         <div className="right">
           <div className="item">
